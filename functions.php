@@ -2,6 +2,12 @@
 
 add_action( 'wp_enqueue_scripts', 'include_styles' );
 add_action( 'wp_enqueue_scripts', 'include_js' );
+add_action( 'after_setup_theme', 'register_nav' );
+
+
+function register_nav() {
+    register_nav_menu('primary', 'primary menu');
+}
 
 
 function include_styles() {
